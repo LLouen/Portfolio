@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="dark" >
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<script>
+try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}
+</script>
 <style>
 :root{--bg:#ffffff;--card:#ffffff;--tx:#14060d;--mut:#3a2030;--ac:#b0105a;--ac2:#6a1fc2;--bd:#b98aa3;--trk:#ecd9e3;
 --f:'Space Grotesk',system-ui,sans-serif;--m:'JetBrains Mono',ui-monospace,monospace;
@@ -358,6 +361,7 @@ document.addEventListener('click',e=>{if(!ct.contains(e.target)){ct.classList.re
 document.getElementById('th').onclick=()=>{
   const r=document.documentElement;
   r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';
+  try{localStorage.setItem('theme',r.dataset.theme)}catch(e){}
 };
 </script>
 <script>
